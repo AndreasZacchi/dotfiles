@@ -9,15 +9,13 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./hardware/bootloader.nix
+      ./hardware/keyring.nix
       ./hardware/time_locale.nix
       ./hardware/sound.nix
       ./hardware/network.nix
       ./DE_WM/xfce+i3.nix
       ./packages.nix
     ];
-
-  #Enable keyring
-  services.gnome.gnome-keyring.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
