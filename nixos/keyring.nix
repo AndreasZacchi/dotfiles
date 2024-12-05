@@ -1,9 +1,9 @@
 { pkgs, ... } : {
     # Install necessary packages for keyring
     environment.systemPackages = with pkgs; [
-     gnome.gnome-keyring
+     pkgs.gnome-keyring
      libsecret
-     gnome.seahorse
+     pkgs.seahorse
   ];
 
   #Enable keyring
