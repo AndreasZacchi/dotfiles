@@ -13,7 +13,16 @@
     config = {
       modifier = "Mod4";
       floating.modifier = "Mod4";
-
+      
+      # default workspaces for certain applications
+      assigns = {
+        "1" = [{ class = "^Code$"; }];
+        "2" = [{ class = "^Firefox$"; }];
+        "3" = [{ class = "^Alacritty$"; }];
+        "4" = [{ class = "^Discord$"; }];
+        "5" = [{ class = "^Spotify$"; }];
+      };
+ 
       keybindings = {
        "Mod4+c" = "kill";
         "Mod4+h" = "focus left";
