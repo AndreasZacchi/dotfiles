@@ -6,8 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [ 
       ./keyring.nix
     ];
 
@@ -26,8 +25,6 @@
   
   programs.file-roller.enable = true;
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8852au ];
-  networking.hostName = "home"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
