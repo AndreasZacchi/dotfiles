@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "AndreasZacchi's flake";
 
   inputs = {
     # NixOS official package source, using the nixos-23.11 branch here
@@ -16,7 +16,7 @@
         system = "x86_64-linux";
         modules = [
           ./nixos/configuration.nix
-          ./nixos/home-hardware.nix
+          ./hosts/home/home-hardware.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -35,7 +35,7 @@
         system = "x86_64-linux";
         modules = [
           ./nixos/configuration.nix
-          ./nixos/laptop-hardware.nix
+          ./hosts/laptop/laptop-hardware.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
