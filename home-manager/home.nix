@@ -1,95 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      ./packages/git.nix
+      
+      ./WM/i3.nix
+    ];
   # TODO please change the username & home directory to your own
   home.username = "andreaszacchi";
   home.homeDirectory = "/home/andreaszacchi";
-
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  xsession.windowManager.i3 = {
-   enable = true;
-    config = {
-      modifier = "Mod4";
-      floating.modifier = "Mod4";
-      
-      # default workspaces for certain applications
-      assigns = {
-        "1" = [{ class = "^Code$"; }];
-        "2" = [{ class = "^Firefox$"; }];
-        "3" = [{ class = "^Alacritty$"; }];
-        "4" = [{ class = "^Discord$"; }];
-        "5" = [{ class = "^Spotify$"; }];
-      };
- 
-      keybindings = {
-       "Mod4+c" = "kill";
-        "Mod4+h" = "focus left";
-        "Mod4+j" = "focus down";
-        "Mod4+k" = "focus up";
-        "Mod4+l" = "focus right";
-        "Mod4+Left" = "focus left";
-        "Mod4+Down" = "focus down";
-        "Mod4+Up" = "focus up";
-        "Mod4+Right" = "focus right";
-        "Mod4+Shift+h" = "move left";
-        "Mod4+Shift+j" = "move down";
-        "Mod4+Shift+k" = "move up";
-        "Mod4+Shift+l" = "move right";
-        "Mod4+Shift+Left" = "move left";
-        "Mod4+Shift+Down" = "move down";
-        "Mod4+Shift+Up" = "move up";
-        "Mod4+Shift+Right" = "move right";        
-
-        "Mod4+f" = "fullscreen toggle";
-        "Mod4+Shift+space" = "floating toggle";
-        "Mod4+Shift+c" = "reload";
-        "Mod4+Shift+r" = "restart";       
-
-       "Mod4+Return" = "exec alacritty -o font.size=12";
-       "Mod4+b" = "exec firefox";
-       "Mod4+p" = "exec rofi -show drun -show-icons";
-       "Mod4+Shift+f" = "exec thunar";
-       "Mod4+Shift+g" = "exec firefox https://github.com/AndreasZacchi?tab=repositories";
-       "Mod4+v" = "exec zsh -c 'source ~/.zshrc && code'";
-
-
-       "Mod4+1" = "workspace number 1";
-        "Mod4+2" = "workspace number 2";
-        "Mod4+3" = "workspace number 3";
-        "Mod4+4" = "workspace number 4";
-        "Mod4+5" = "workspace number 5";
-        "Mod4+6" = "workspace number 6";
-        "Mod4+7" = "workspace number 7";
-        "Mod4+8" = "workspace number 8";
-        "Mod4+9" = "workspace number 9";
-        "Mod4+0" = "workspace number 10";
-
-        "Mod4+Shift+1" = "move container to workspace number 1";
-        "Mod4+Shift+2" = "move container to workspace number 2";
-        "Mod4+Shift+3" = "move container to workspace number 3";
-        "Mod4+Shift+4" = "move container to workspace number 4";
-        "Mod4+Shift+5" = "move container to workspace number 5";
-        "Mod4+Shift+6" = "move container to workspace number 6";
-        "Mod4+Shift+7" = "move container to workspace number 7";
-        "Mod4+Shift+8" = "move container to workspace number 8";
-        "Mod4+Shift+9" = "move container to workspace number 9";
-      };
-    };
-  };
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
 
    # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -128,15 +48,6 @@
     pciutils # lspci
     usbutils # lsusb
   ];
-
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "Andreas V. W. Zacchi";
-    userEmail = "zacchiandreas@gmail.com";
-  };
-  #programs.git-credential-oauth.enable = true;
-  programs.gh.enable = true;
 
   programs.spotify-player.enable = true;
 

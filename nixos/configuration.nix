@@ -14,7 +14,7 @@
       ./modules/sound.nix
 
       # Set Desktop Environment
-      ./DE/x11/xfce-i3.nix
+      ./DE/x11/xfce-nowm.nix
     ];
 
   # Enable networking
