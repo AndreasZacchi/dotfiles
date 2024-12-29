@@ -14,27 +14,11 @@
       ./modules/sound.nix
 
       # Set Desktop Environment
-      #./DE/x11/xfce-nowm.nix
+      ./DE/x11/xfce-i3.nix
     ];
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  services.xserver = {
-        enable = true;   
-        desktopManager = {
-            xterm.enable = false;
-            xfce = {
-                enable = true;
-                noDesktop = true;
-                enableXfwm = false;
-            };
-        };
-        xkb = {
-            layout = "dk";
-            variant = "";
-        };
-    };
 
   # Enable firefox, thunar and file roller no matter DE
   programs.firefox.enable = true;
