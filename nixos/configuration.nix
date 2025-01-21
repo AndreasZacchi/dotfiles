@@ -22,12 +22,6 @@
 
   # Enable firefox, thunar and file roller no matter DE
   programs.firefox.enable = true;
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-    ];
-  };
   programs.file-roller.enable = true;
 
   # Enable CUPS to print documents.
