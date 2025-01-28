@@ -14,7 +14,8 @@
       ./modules/sound.nix
 
       # Set Desktop Environment
-      ./DE/x11/xfce-i3.nix
+      #./DE/x11/xfce-i3.nix
+      ./DE/wayland/sway.nix
     ];
 
   # Enable networking
