@@ -6,7 +6,6 @@
             xterm.enable = false;
             xfce = {
                 enable = true;
-                thunarPlugins = [ pkgs.xfce.thunar-archive-plugin ];
                 noDesktop = true;
                 enableXfwm = false;
             };
@@ -16,5 +15,11 @@
             variant = "";
         };
         windowManager.i3.enable = true;
+  };
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+    ];
   };
 }
