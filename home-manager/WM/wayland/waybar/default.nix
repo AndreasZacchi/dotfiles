@@ -12,7 +12,7 @@
             modules-right = [ "network" "custom/divider" "bluetooth" "custom/divider" "pulseaudio" "custom/divider" "battery" "custom/divider" "clock" ];
 
             "battery" = {
-                format = "1{capacity}% {icon}";
+                format = "{capacity}% {icon}";
                 format-charging = "1{capacity}% ⚡";
                 format-icons = [""  ""  ""  ""  ""];
             };
@@ -26,6 +26,11 @@
                 disable-scroll = true;
                 all-outputs = false;
             };
+
+            "wlr/taskbar" = {
+                "on-click" = "activate";
+            };
+
             "network" = {
                 # "interface" = "wlp2s0"; # (Optional) To force the use of this interface
                 "format-wifi" = "{essid} ({signalStrength}%) ";
@@ -48,7 +53,7 @@
                 #"scroll-step" = 1;
                 "format" = "{volume}% {icon}";
                 "format-bluetooth" = "{volume}% {icon}";
-                "format-muted" = "";
+                "format-muted" = "{volume}% ";
                 "format-icons" = {
                     "headphones" = "";
                     "handsfree" = "";
@@ -58,7 +63,7 @@
                     "car" = "";
                     "default" = ["" ""];
                 };
-                "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+                "on-click" = "pavucontrol";
             };
 
             "custom/divider" = {

@@ -6,6 +6,7 @@
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     brightnessctl
     networkmanagerapplet # Network editor GUI
+    pavucontrol # Audio Control
   ];
 
   # enable sway window manager

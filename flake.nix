@@ -26,7 +26,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andreaszacchi = import ./home-manager/home.nix;
+            home-manager.users.andreaszacchi = import ./home-manager/home-desktop.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
@@ -47,7 +47,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.andreaszacchi = import ./home-manager/home.nix;
+            home-manager.users.andreaszacchi = import ./home-manager/home-laptop.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
