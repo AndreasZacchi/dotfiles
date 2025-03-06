@@ -153,7 +153,7 @@
     settings = {
       env.TERM = "xterm-256color";
       font = {
-        size = 12;
+        size = 15;
 
       };
       scrolling.multiplier = 5;

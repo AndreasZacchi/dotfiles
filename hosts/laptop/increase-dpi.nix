@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  services.xserver.dpi = 158;
+  services.xserver.dpi = 125;
 }
