@@ -14,20 +14,27 @@
       ./modules/sound.nix
 
       # Set Desktop Environment
-      ./DE/x11/xfce-i3.nix
+      #./DE/x11/xfce-i3.nix
+      ./DE/wayland/sway.nix
     ];
 
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Enable firefox, thunar and file roller no matter DE
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+    ];
+  };
+  programs.xfconf.enable = true; # To save thunar preferences
   programs.firefox.enable = true;
   programs.file-roller.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

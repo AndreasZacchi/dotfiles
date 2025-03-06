@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-    xsession.windowManager.i3 = {
+  xsession.windowManager.i3 = {
    enable = true;
     config = {
       modifier = "Mod4";
@@ -70,10 +70,4 @@
       };
     };
   };
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
 }
