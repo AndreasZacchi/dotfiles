@@ -26,16 +26,16 @@ in {
                 };
             };
 
-            output = {
-                #"*" = { bg = "${background} fit #1d2021"; };
-                "*" = { bg = "#1d2021 solid_color"; };
-                DP-1 = {
-                    position = "0 0";
-                };
-                DP-3 = {
-                    position = "1920 0";
-                };
-            };
+            # output = {
+            #     #"*" = { bg = "${background} fit #1d2021"; };
+            #     "*" = { bg = "#1d2021 solid_color"; };
+            #     DP-1 = {
+            #         position = "0 0";
+            #     };
+            #     DP-3 = {
+            #         position = "1920 0";
+            #     };
+            # };
 
             defaultWorkspace = "workspace number 1";
 

@@ -12,6 +12,7 @@
       ./modules/grub.nix
       ./modules/locale.nix
       ./modules/sound.nix
+      ./modules/bitwarden.nix
 
       # Set Desktop Environment
       #./DE/x11/xfce-i3.nix
