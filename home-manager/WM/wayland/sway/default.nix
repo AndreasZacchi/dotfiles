@@ -18,7 +18,7 @@ in {
             floating.modifier = "${modKey}";
 
             terminal = "alacritty"; 
-            menu = "wofi --show run";
+            menu = "rofi -show drun -show-icons";
 
             input = {
                 "*" = {

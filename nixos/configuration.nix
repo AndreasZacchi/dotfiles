@@ -1,9 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
-
 {
   imports =
     [ 
@@ -13,6 +8,8 @@
       ./modules/locale.nix
       ./modules/sound.nix
       ./modules/bitwarden.nix
+      ./modules/thunar.nix
+      ./modules/firefox.nix
 
       # Set Desktop Environment
       #./DE/x11/xfce-i3.nix
@@ -21,24 +18,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Enable firefox, thunar and file roller no matter DE
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-    ];
-  };
-  programs.xfconf.enable = true; # To save thunar preferences
-  programs.firefox.enable = true;
-  programs.file-roller.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.brlaser ];
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andreaszacchi = {
