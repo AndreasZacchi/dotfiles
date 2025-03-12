@@ -62,6 +62,7 @@ in {
             };
 
             keybindings = {
+                "${modKey}+Escape" = "swaylock";
                 "${modKey}+c" = "kill";
                 "${modKey}+h" = "focus left";
                 "${modKey}+j" = "focus down";
@@ -92,7 +93,8 @@ in {
                 "${modKey}+Shift+f" = "exec thunar";
                 "${modKey}+Shift+g" = "exec firefox https://github.com/AndreasZacchi?tab=repositories";
                 "${modKey}+v" = "exec zsh -c 'source ~/.zshrc && code'";
-
+                "${modKey}+Alt+s" = "exec grim -g '$(slurp -d)' /home/$USER/Pictures/$(date).png"; # Save screenshot to file with date
+                "${modKey}+Shift+s" = "exec grim -g '$(slurp -d)' - | wl-copy -t image/png"; # Save screenshot to clipboard
 
                 "${modKey}+1" = "workspace number 1";
                 "${modKey}+2" = "workspace number 2";
