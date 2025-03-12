@@ -1,4 +1,6 @@
 {
+    # This requires the following fonts to be installed:
+    #font-awesome, powerline-fonts, powerline-symbols
     programs.waybar = {
         enable = true;
         style = builtins.readFile ./style.css;

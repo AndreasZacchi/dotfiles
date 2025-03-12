@@ -8,7 +8,6 @@
 		# WM/DE
 		#./WM/i3.nix
 		./WM/wayland/sway
-		./WM/rofi.nix
 
 		# Dev environment
 		./packages/devenv/git.nix
