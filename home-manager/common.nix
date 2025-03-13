@@ -24,6 +24,7 @@
 		# Applications
 		./packages/applications/spotify.nix
 		./packages/applications/discord.nix
+		./packages/applications/firefox.nix
 	];
 
 	home.username = "andreaszacchi";

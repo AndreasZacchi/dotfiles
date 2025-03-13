@@ -9,7 +9,6 @@
       ./modules/sound.nix
       ./modules/bitwarden.nix
       ./modules/thunar.nix
-      ./modules/firefox.nix
 
       # Set Desktop Environment
       #./DE/x11/xfce-i3.nix
