@@ -35,6 +35,7 @@
           ./nixos/configuration.nix
           ./hosts/laptop/laptop-hardware.nix
           ./hosts/laptop/disable-nvidia-laptop.nix
+          ./hosts/laptop/suspend-kernel.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
