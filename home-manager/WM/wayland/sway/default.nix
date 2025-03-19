@@ -9,6 +9,7 @@ in {
     [ 
         ../mako
         ../waybar
+        ../swaylock
         ../../rofi.nix
     ];
     
@@ -62,7 +63,7 @@ in {
             };
 
             keybindings = {
-                "${modKey}+Escape" = "swaylock";
+                "${modKey}+Escape" = "exec swaylock";
                 "${modKey}+c" = "kill";
                 "${modKey}+h" = "focus left";
                 "${modKey}+j" = "focus down";
