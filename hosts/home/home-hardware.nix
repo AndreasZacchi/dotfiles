@@ -13,7 +13,6 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8852au ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/850f55cc-5fc6-44df-b94d-9d201fa5d497";
