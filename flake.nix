@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/master"; # Use the latest home-manager
       inputs.nixpkgs.follows = "nixpkgs"; # Use the same nixpkgs as the flake to avoid conflicts
     };
-
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -17,6 +16,8 @@
         modules = [
           ./nixos/configuration.nix
           ./hosts/home/home-hardware.nix
+          ./hosts/home/network.nix
+          ./hosts/home/gpu.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
