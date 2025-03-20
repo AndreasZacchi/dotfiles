@@ -10,6 +10,7 @@ in {
         ../mako
         ../waybar
         ../swaylock
+        ../swayidle
         ../../rofi.nix
     ];
     
