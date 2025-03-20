@@ -134,7 +134,9 @@ in {
                 ## Play next spotify track
                 "XF86AudioNext" = "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next";
                 "XF86Tools" = "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next";
-
+                ## Turn brightness down/up
+                "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
+                "XF86MonBrightnessUp" = "exec brightnessctl set +10%";
             };
         };
   };
