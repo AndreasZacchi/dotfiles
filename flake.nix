@@ -7,9 +7,11 @@
       url = "github:nix-community/home-manager/master"; # Use the latest home-manager
       inputs.nixpkgs.follows = "nixpkgs"; # Use the same nixpkgs as the flake to avoid conflicts
     };
+    #inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:AndreasZacchi/nixos-hardware/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, ... }: {
     nixosConfigurations = {
       home = nixpkgs.lib.nixosSystem { # My home desktop
         system = "x86_64-linux";
@@ -35,9 +37,9 @@
         modules = [
           ./nixos/configuration.nix
           ./hosts/laptop/laptop-hardware.nix
-          ./hosts/laptop/disable-nvidia-laptop.nix
+          nixos-hardware.nixosModules.asus-zenbook-ux481-intelgpu
+
           ./hosts/laptop/battery.nix
-          ./hosts/laptop/suspend-kernel.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

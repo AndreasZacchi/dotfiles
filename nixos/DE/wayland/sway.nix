@@ -16,4 +16,5 @@
     wrapperFeatures.gtk = true;
   };
   
+  services.xserver.enable = false; # dsiable x server
 }
