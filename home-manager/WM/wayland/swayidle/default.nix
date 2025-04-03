@@ -11,13 +11,13 @@
 
                 {
                     timeout = 185;
-                    command = "swaylock";
+                    command = "${pkgs.swaylock}/bin/swaylock";
                 }
 
                 {
                     timeout = 190;
-                    command = "swaymsg 'output * dpms off'";
-                    resumeCommand = "swaymsg 'output * dpms on'";
+                    command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'";
+                    resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
                 }
 
                     {
@@ -28,7 +28,7 @@
             events = [
                 {
                     event = "before-sleep";
-                    command = "swaylock";
+                    command = "${pkgs.swaylock}/bin/swaylock";
                 }
             ];
         };
