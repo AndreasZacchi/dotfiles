@@ -13,7 +13,10 @@
 		./packages/devenv/git.nix
 		./packages/devenv/direnv.nix
 		./packages/devenv/vscode.nix
+
 		./packages/devenv/languages/python3.nix
+		./packages/devenv/languages/dotnet.nix
+		./packages/devenv/languages/java.nix
 
 		# Terminal
 		./packages/terminal/alacritty.nix
