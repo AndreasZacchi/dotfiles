@@ -18,6 +18,8 @@
 		./packages/devenv/languages/dotnet.nix
 		./packages/devenv/languages/java.nix
 
+		./packages/devenv/postgresql.nix
+
 		# Terminal
 		./packages/terminal/alacritty.nix
 		./packages/terminal/bash.nix

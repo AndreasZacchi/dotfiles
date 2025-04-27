@@ -9,9 +9,11 @@
     };
     #inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-hardware.url = "github:AndreasZacchi/nixos-hardware/master";
+
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, ... }: {
     nixosConfigurations = {
       home = nixpkgs.lib.nixosSystem { # My home desktop
         system = "x86_64-linux";
@@ -30,6 +32,7 @@
 
             home-manager.users.andreaszacchi = import ./home-manager/home-desktop.nix;
           }
+          stylix.nixosModules.stylix
         ];
       };
       laptop = nixpkgs.lib.nixosSystem { # My ASUS laptop
@@ -50,6 +53,7 @@
 
             home-manager.users.andreaszacchi = import ./home-manager/home-laptop.nix;
           }
+          stylix.nixosModules.stylix
         ];
       };
     };
