@@ -15,4 +15,5 @@
             DisplayBookmarksToolbar = "always";
         };
     };
+    stylix.targets.firefox.profileNames = [ "default" ];
 }

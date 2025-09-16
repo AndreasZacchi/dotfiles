@@ -2,7 +2,7 @@
   description = "AndreasZacchi's flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Unstable nixpkgs so newest packages are available
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable"; # Unstable nixpkgs so newest packages are available
     home-manger = {
       url = "github:nix-community/home-manager/master"; # Use the latest home-manager
       inputs.nixpkgs.follows = "nixpkgs"; # Use the same nixpkgs as the flake to avoid conflicts
@@ -10,7 +10,10 @@
     #inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-hardware.url = "github:AndreasZacchi/nixos-hardware/master";
 
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, ... }: {

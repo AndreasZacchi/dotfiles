@@ -14,7 +14,8 @@ let
     "clock" = { format-alt = "{:%a, %d. %b  %H:%M}"; };
     "sway/window" = { max-length = 50; };
     "sway/workspaces" = { disable-scroll = true; all-outputs = false; };
-    "wlr/taskbar" = { "on-click" = "activate"; };
+    "wlr/taskbar" = { 
+      "on-click" = "activate"; };
 
     "network" = {
       "format-wifi" = "{essid} ({signalStrength}%) ";
@@ -61,7 +62,6 @@ in
 {
   programs.waybar = {
     enable = true;
-    style = builtins.readFile ./style.css;
 
     # Build a SINGLE bar by merging base + host-specific attrs
     settings = [

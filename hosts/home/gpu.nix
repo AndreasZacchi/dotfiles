@@ -10,7 +10,6 @@
         enable = true;
         extraPackages = with pkgs; [
             mesa
-            mesa.drivers
         ];
     };
 }
