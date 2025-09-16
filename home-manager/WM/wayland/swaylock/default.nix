@@ -4,9 +4,10 @@
         settings = {
             daemonize = true;
             font-size = 24;
-            indicator-idle-visible = false;
-            indicator-radius = 100;
-            line-color = "ffffff";
+            indicator-idle-visible = true;
+            indicator-radius = 120;
+            indicator-thickness = 15;
+            
             show-failed-attempts = true;
         };
     };
