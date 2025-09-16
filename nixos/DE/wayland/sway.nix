@@ -14,6 +14,9 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      adwaita-icon-theme
+    ];
   };
   
   services.xserver.enable = false; # dsiable x server

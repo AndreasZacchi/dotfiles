@@ -31,6 +31,12 @@ in {
                 };
             };
 
+            seat = {
+                "*" = {
+                    xcursor_theme = "Adwaita 24";
+                };
+            };
+
             # output = {
             #     #"*" = { bg = "${background} fit #1d2021"; };
             #     "*" = { bg = "#1d2021 solid_color"; };
