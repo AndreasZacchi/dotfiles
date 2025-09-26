@@ -26,6 +26,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  home-manager.backupFileExtension = "backup";
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
