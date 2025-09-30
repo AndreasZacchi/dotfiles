@@ -19,6 +19,9 @@
 		./packages/devenv/languages/java.nix
 
 		./packages/devenv/postgresql.nix
+		
+		# TexLive
+		./packages/tex.nix
 
 		# Terminal
 		./packages/terminal/alacritty.nix

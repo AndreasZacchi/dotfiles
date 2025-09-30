@@ -15,5 +15,9 @@
     login = {
       enableGnomeKeyring = true;
     };
+    swaylock = {
+      enableGnomeKeyring = true;
+    };
   };
+  services.dbus.enable = true;
 }
