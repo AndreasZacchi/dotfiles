@@ -54,6 +54,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
+            home-manager.extraSpecialArgs = {
+              isLaptop = true;
+            };
+
             home-manager.users.andreaszacchi = import ./home-manager/home-laptop.nix;
           }
           stylix.nixosModules.stylix

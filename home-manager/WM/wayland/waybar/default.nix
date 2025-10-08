@@ -1,8 +1,6 @@
-{ lib, pkgs, ... }:
+{ lib, config, pkgs, isLaptop ? false, ... }:
 
 let
-  isLaptop = builtins.pathExists "/sys/class/power_supply/BAT0";
-
   baseBar = {
     layer = "top";
     position = "top";
@@ -30,6 +28,7 @@ let
       interval = 30;
       format-icons = { enabled = ""; disabled = ""; };
       tooltip-format = "{}";
+      "on-click" = "blueman-manager";
     };
     "pulseaudio" = {
       "format" = "{volume}% {icon}";
