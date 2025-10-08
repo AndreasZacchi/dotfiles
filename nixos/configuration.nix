@@ -9,11 +9,13 @@
       ./modules/sound.nix
       ./modules/bitwarden.nix
       ./modules/thunar.nix
+      ./modules/greetd.nix
 
       ./modules/stylix.nix
       # Set Desktop Environment
       #./DE/x11/xfce-i3.nix
       ./DE/wayland/sway.nix
+
     ];
 
   # Enable networking
