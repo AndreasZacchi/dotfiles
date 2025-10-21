@@ -5,6 +5,8 @@
     pkgs.gnome-keyring
     libsecret
     pkgs.seahorse
+    pkgs.gnupg
+    pkgs.pinentry-curses
   ];
 
   #Enable keyring
@@ -20,4 +22,9 @@
     };
   };
   services.dbus.enable = true;
+
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 }
