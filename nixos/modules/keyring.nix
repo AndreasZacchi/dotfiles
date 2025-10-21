@@ -14,12 +14,9 @@
   services.gnome.gnome-keyring.enable = true;
 
   security.pam.services = {
-    login = {
-      enableGnomeKeyring = true;
-    };
-    swaylock = {
-      enableGnomeKeyring = true;
-    };
+    login.enableGnomeKeyring = true;
+    swaylock.enableGnomeKeyring = true;
+    greetd.enableGnomeKeyring = true;
   };
   services.dbus.enable = true;
 
