@@ -12,4 +12,5 @@
         signing.signByDefault = true;
     };
     programs.gh.enable = true;
+    programs.lazygit.enable = true;
 }
