@@ -10,6 +10,16 @@
         enable = true;
         extraPackages = with pkgs; [
             mesa
+            vaapiVdpau
+            libvdpau
+            libva
         ];
+    };
+
+    # Help prevent issues with Firefox and Nouveau
+    environment.sessionVariables = {
+        MOZ_WEBRENDER = "1";
+        MOZ_ACCELERATED = "1";
+        MOZ_X11_EGL = "1";
     };
 }
