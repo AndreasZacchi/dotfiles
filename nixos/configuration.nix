@@ -20,6 +20,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 3000 ];
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andreaszacchi = {
