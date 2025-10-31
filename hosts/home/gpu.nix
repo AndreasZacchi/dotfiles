@@ -1,25 +1,29 @@
-{config, pkgs, ...}:
+{  config, pkgs, ... }:
 {
-    boot.kernelModules = [ "nouveau" ];
+    boot.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_drm" "nvidia_uvm" ];
+    boot.blacklistedKernelModules = [ "nouveau" ];
 
-    # Blacklist the proprietary NVIDIA driver, if needed
-    boot.blacklistedKernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
-
-    # Enable hardware acceleration for Nouveau
     hardware.graphics = {
         enable = true;
-        extraPackages = with pkgs; [
-            mesa
-            vaapiVdpau
-            libvdpau
-            libva
-        ];
     };
 
-    # Help prevent issues with Firefox and Nouveau
+    services.xserver.videoDrivers = [ "nvidia" ];
+
+    hardware.nvidia = {
+        modesetting.enable = true;
+        nvidiaSettings = true;
+        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        open = true;
+        powerManagement.enable = true;
+    };
+
     environment.sessionVariables = {
-        MOZ_WEBRENDER = "1";
-        MOZ_ACCELERATED = "1";
-        MOZ_X11_EGL = "1";
+        GBM_BACKEND = "nvidia-drm";
+        __GL_SYNC_TO_VBLANK = "1";
+        __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+        WLR_NO_HARDWARE_CURSORS = "1";
+        GDK_BACKEND = "wayland";
+        QT_QPA_PLATFORM = "wayland";
+        MOZ_ENABLE_WAYLAND = "1";
     };
 }
