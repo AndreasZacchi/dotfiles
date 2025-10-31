@@ -25,6 +25,15 @@
     allowedTCPPorts = [ 3000 ];
   };
 
+  nix.settings = {
+    substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andreaszacchi = {
     isNormalUser = true;
