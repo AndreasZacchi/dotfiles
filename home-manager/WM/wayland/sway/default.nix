@@ -2,7 +2,7 @@
 let
     modKey = "Mod4";
     terminal = "alacritty";
-    menu = "rofi -show drun -show-icons";
+    menu = "wofi -show drun -show-icons";
     #background = "any.png";
 in {
     imports =
@@ -11,7 +11,7 @@ in {
         ../waybar
         ../swaylock
         ../swayidle
-        ../../rofi.nix
+        ../../wofi.nix
     ];
     
     wayland.windowManager.sway = {
