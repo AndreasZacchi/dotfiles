@@ -16,6 +16,8 @@
       #./DE/x11/xfce-i3.nix
       ./DE/wayland/sway.nix
 
+      # Nix optimisations
+      ./modules/nix-optimisation.nix
     ];
 
   # Enable networking

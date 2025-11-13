@@ -28,6 +28,7 @@
 		./packages/terminal/bash.nix
 		./packages/terminal/starship.nix
 		./packages/terminal/tools.nix
+		./packages/terminal/payrespects.nix
 
 		# Applications
 		./packages/applications/spotify.nix
