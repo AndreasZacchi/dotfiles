@@ -6,8 +6,10 @@
 	];
     programs.git = {
         enable = true;
-        userName = "Andreas V. W. Zacchi";
-        userEmail = "zacchiandreas@gmail.com";
+        settings.user = {
+            name = "Andreas V. W. Zacchi";
+            email = "zacchiandreas@gmail.com";
+        };
         signing.format = "openpgp";
         signing.signByDefault = true;
     };

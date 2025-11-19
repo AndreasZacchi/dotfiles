@@ -13,10 +13,12 @@
 		./packages/devenv/git.nix
 		./packages/devenv/direnv.nix
 		./packages/devenv/vscode.nix
+		./packages/devenv/gpg.nix
 
 		./packages/devenv/languages/python3.nix
 		./packages/devenv/languages/dotnet.nix
 		./packages/devenv/languages/java.nix
+		
 
 		./packages/devenv/postgresql.nix
 		
