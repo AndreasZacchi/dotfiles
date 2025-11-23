@@ -7,8 +7,7 @@
       url = "github:nix-community/home-manager/master"; # Use the latest home-manager
       inputs.nixpkgs.follows = "nixpkgs"; # Use the same nixpkgs as the flake to avoid conflicts
     };
-    #inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.url = "github:AndreasZacchi/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     stylix = {
       url = "github:danth/stylix";
@@ -47,7 +46,7 @@
         modules = [
           ./nixos/configuration.nix
           ./hosts/laptop/laptop-hardware.nix
-          nixos-hardware.nixosModules.asus-zenbook-ux481-intelgpu
+          nixos-hardware.nixosModules.asus-zenbook-ux481-nvidia
 
           ./hosts/laptop/battery.nix
 
