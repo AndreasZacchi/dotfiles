@@ -6,10 +6,14 @@
     libsecret
     pkgs.seahorse
     pkgs.gnupg
+    pcsclite
+    libfido2
+    opensc
   ];
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
+  hardware.gpgSmartcards.enable = true;
 
   #Enable keyring
   security.polkit.enable = true;

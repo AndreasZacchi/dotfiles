@@ -5,7 +5,7 @@
         
         # https://support.yubico.com/hc/en-us/articles/4819584884124-Resolving-GPG-s-CCID-conflicts
         scdaemonSettings = {
-            disable-ccid = false;
+            disable-ccid = true;
         };
         
         # https://github.com/drduh/config/blob/master/gpg.conf
