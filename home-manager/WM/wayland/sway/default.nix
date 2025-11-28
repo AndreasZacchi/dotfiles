@@ -13,6 +13,8 @@ in {
         ../swayidle
         ../../wofi.nix
     ];
+
+    services.autotiling.enable = true;
     
     wayland.windowManager.sway = {
         enable = true;

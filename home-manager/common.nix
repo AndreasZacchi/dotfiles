@@ -36,6 +36,7 @@
 		./packages/applications/spotify.nix
 		./packages/applications/discord.nix
 		./packages/applications/firefox.nix
+		./packages/applications/thunderbird.nix
 	];
 
 	home.username = "andreaszacchi";
