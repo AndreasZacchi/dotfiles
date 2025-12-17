@@ -13,7 +13,6 @@
 
       ./modules/stylix.nix
       # Set Desktop Environment
-      #./DE/x11/xfce-i3.nix
       ./DE/wayland/sway.nix
 
       # Nix optimisations

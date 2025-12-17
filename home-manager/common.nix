@@ -6,7 +6,6 @@
 		./packages/fonts.nix
 
 		# WM/DE
-		#./WM/i3.nix
 		./WM/wayland/sway
 
 		# Dev environment
@@ -36,12 +35,14 @@
 		./packages/applications/spotify.nix
 		./packages/applications/discord.nix
 		./packages/applications/firefox.nix
+		./packages/applications/librewolf.nix
 		./packages/applications/thunderbird.nix
+		./packages/applications/clippersist.nix
 	];
 
 	home.username = "andreaszacchi";
 	home.homeDirectory = "/home/andreaszacchi";
-	home.keyboard.layout = "da";
+	home.keyboard.layout = "dk";
 
 	# This value determines the home Manager release that your
 	# configuration is compatible with. This helps avoid breakage

@@ -2,7 +2,8 @@
 let
     modKey = "Mod4";
     terminal = "alacritty";
-    menu = "wofi -show drun -show-icons";
+    menu = "wofi";
+    dmenu = "wofi -show drun -show-icons";
     #background = "any.png";
 in {
     imports =
@@ -99,7 +100,7 @@ in {
 
                 "${modKey}+Return" = "exec ${terminal} -o font.size=12";
                 "${modKey}+b" = "exec firefox";
-                "${modKey}+p" = "exec ${menu}";
+                "${modKey}+p" = "exec ${dmenu}";
                 "${modKey}+Shift+f" = "exec thunar";
                 "${modKey}+Shift+g" = "exec firefox https://github.com/AndreasZacchi?tab=repositories";
                 "${modKey}+v" = "exec zsh -c 'source ~/.zshrc && code'";
@@ -149,5 +150,6 @@ in {
                 "XF86MonBrightnessUp" = "exec brightnessctl set +10%";
             };
         };
+        systemd.enable = true;
   };
 }
