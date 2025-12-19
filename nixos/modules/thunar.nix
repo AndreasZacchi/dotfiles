@@ -7,7 +7,7 @@
     ];
   };
   programs.xfconf.enable = true; # To save thunar preferences
-  programs.file-roller.enable = true;
+ # programs.file-roller.enable = true;
 
   # Add thumbnail support
   environment.systemPackages = with pkgs; [
