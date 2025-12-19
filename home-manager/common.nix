@@ -22,7 +22,7 @@
 		./packages/devenv/postgresql.nix
 		
 		# TexLive
-		./packages/tex.nix
+		#./packages/tex.nix
 
 		# Terminal
 		./packages/terminal/alacritty.nix
