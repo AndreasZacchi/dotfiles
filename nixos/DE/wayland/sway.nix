@@ -20,4 +20,5 @@
   };
   
   services.xserver.enable = false; # dsiable x server
+  programs.xwayland.enable = true; # enable xwayland for X11 app compatibility
 }

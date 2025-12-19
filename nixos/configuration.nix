@@ -11,6 +11,7 @@
       ./modules/thunar.nix
       ./modules/greetd.nix
 
+      ./modules/opengl.nix
       ./modules/stylix.nix
       # Set Desktop Environment
       #./DE/x11/xfce-i3.nix
