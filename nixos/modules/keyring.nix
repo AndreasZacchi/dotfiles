@@ -35,13 +35,14 @@
       greetd.enableGnomeKeyring = true;
       login.u2fAuth = true;
       sudo.u2fAuth = true;
-      #swaylock.u2fAuth = true;
+      swaylock.u2fAuth = true;
       polkit-1.u2fAuth = true;
-      #greetd.u2fAuth = true;
+      greetd.u2fAuth = true;
     };
     u2f = {
       enable = true;
       settings = {
+        authfile = "/etc/u2f_keys";
         interactive = true;
         cue = true;
       };
@@ -49,6 +50,7 @@
   };
 
   services.dbus.enable = true;
+  systemd.user.services.gnome-keyring-daemon.wantedBy = [ "default.target" ];
 
   # programs.gnupg.agent = {
   #   enable = true;

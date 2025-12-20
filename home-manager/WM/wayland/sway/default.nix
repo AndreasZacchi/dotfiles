@@ -59,7 +59,20 @@ in {
             startup = [
                 # Notification daemon
                 { command = "mako"; }
+
+                # Export environment for dbus/systemd user services
+                {
+                    command = "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK";
+                    always = true;
+                }
+
+                # Start gnome-keyring inside the sway session
+                {
+                    command = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,ssh,pkcs11";
+                    always = true;
+                }
             ];
+
             window.titlebar = false;
   
 
