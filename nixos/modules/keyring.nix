@@ -9,6 +9,7 @@
     pcsclite
     libfido2
     opensc
+    ccid
   ];
 
   services.udev.packages = [ pkgs.yubikey-personalization pkgs.yubikey-manager pkgs.libu2f-host pkgs.libfido2 ];
