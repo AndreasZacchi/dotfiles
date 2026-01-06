@@ -13,9 +13,17 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, dms, niri, ... }: {
     nixosConfigurations = {
       home = nixpkgs.lib.nixosSystem { # My home desktop
         system = "x86_64-linux";
@@ -35,6 +43,7 @@
 
             home-manager.extraSpecialArgs = {
               isLaptop = false;
+              inherit inputs;
             };
 
             home-manager.users.andreaszacchi = import ./home-manager/home-desktop.nix;
@@ -60,6 +69,7 @@
 
             home-manager.extraSpecialArgs = {
               isLaptop = true;
+              inherit inputs;
             };
 
             home-manager.users.andreaszacchi = import ./home-manager/home-laptop.nix;

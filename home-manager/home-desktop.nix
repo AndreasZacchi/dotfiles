@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
    [
       ./common.nix
-      #./WM/wayland/sway/desktop.nix
+      ./WM/wayland/sway/desktop.nix
    ];
 }
 

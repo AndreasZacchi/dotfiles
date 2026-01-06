@@ -78,7 +78,7 @@ in {
 
             # default workspaces for certain applications
             assigns = {
-                "workspace number 1" = [{ class = "^[Cc]ode$"; }];
+                "workspace number 1" = [{ app_id = "^[Cc]ode$"; }];
                 "workspace number 2" = [{ app_id = "^[Ff]irefox$"; }];
                 "workspace number 3" = [{ app_id = "^[Aa]lacritty$"; }];
                 "workspace number 4" = [{ class = "^[Dd]iscord$"; }];
