@@ -36,14 +36,9 @@
       swaylock.enableGnomeKeyring = true;
       greetd.enableGnomeKeyring = true;
       login.u2fAuth = true;
-      sudo = {
-        u2fAuth = true;
-      };
-      swaylock = {
-        u2fAuth = true;
-      };
+      sudo.u2fAuth = true;
+      swaylock.u2fAuth = true;
       polkit-1.u2fAuth = true;
-      greetd.u2fAuth = true;
     };
     u2f = {
       enable = true;

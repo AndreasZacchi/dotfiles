@@ -20,4 +20,8 @@
 
     # Set console keymap.
     console.keyMap = "dk-latin1";
+
+    services.xserver.xkb = {
+      layout = "dk";
+    };
 }

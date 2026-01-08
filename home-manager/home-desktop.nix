@@ -4,7 +4,7 @@
   imports =
    [
       ./common.nix
-      ./WM/wayland/sway/desktop.nix
+      #./WM/wayland/sway/desktop.nix
    ];
 }
 
