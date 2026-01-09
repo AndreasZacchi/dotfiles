@@ -16,15 +16,6 @@
   services.pcscd.enable = true;
   hardware.gpgSmartcards.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    configPackages = [ pkgs.gnome-session ];
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
-    ];
-  };
-
   #Enable keyring
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;

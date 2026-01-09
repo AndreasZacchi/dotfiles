@@ -10,6 +10,7 @@
       ./modules/bitwarden.nix
       ./modules/thunar.nix
       ./modules/greetd.nix
+      ./modules/xdg.nix
 
       ./modules/opengl.nix
       ./modules/stylix.nix
