@@ -4,6 +4,9 @@
     ../swaylock
   ];
 
+  #        include "dms/layout.kdl"
+  #        include "dms/binds.kdl"
+
   home.file.".config/niri/config.kdl" = {
     text = ''
       include "./dms/alttab.kdl"
