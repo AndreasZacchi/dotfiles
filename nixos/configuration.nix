@@ -9,13 +9,15 @@
       ./modules/sound.nix
       ./modules/bitwarden.nix
       ./modules/thunar.nix
-      ./modules/greetd.nix
+      #./modules/greetd.nix # Sway
       ./modules/xdg.nix
 
       ./modules/opengl.nix
       ./modules/stylix.nix
       # Set Desktop Environment
-      ./DE/wayland/sway.nix
+      #./DE/wayland/sway.nix # Sway
+      ./DE/wayland/niri.nix
+      ./modules/dms-greeter.nix
 
       # Nix optimisations
       ./modules/nix-optimisation.nix
@@ -31,8 +33,11 @@
   nix.settings = {
     substituters = [
       "https://nix-community.cachix.org"
+      "https://niri.cachix.org"
+
     ];
     trusted-public-keys = [
+      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
@@ -41,7 +46,7 @@
   users.users.andreaszacchi = {
     isNormalUser = true;
     description = "AndreasZacchi";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "greeter" ];
   };
 
   home-manager.backupFileExtension = "backup";

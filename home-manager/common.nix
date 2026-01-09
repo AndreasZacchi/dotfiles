@@ -6,7 +6,9 @@
 		./packages/fonts.nix
 
 		# WM/DE
-		./WM/wayland/sway
+		#./WM/wayland/sway
+		./WM/wayland/dms
+		./WM/wayland/niri
 
 		# Dev environment
 		./packages/devenv/git.nix

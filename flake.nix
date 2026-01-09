@@ -13,12 +13,32 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      #url = "github:AvengeMedia/DankMaterialShell/stable";
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    danksearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, dms, niri, quickshell, ... }: {
     nixosConfigurations = {
       home = nixpkgs.lib.nixosSystem { # My home desktop
         system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./nixos/configuration.nix
           ./hosts/home/home-hardware.nix
@@ -35,6 +55,7 @@
 
             home-manager.extraSpecialArgs = {
               isLaptop = false;
+              inherit inputs;
             };
 
             home-manager.users.andreaszacchi = import ./home-manager/home-desktop.nix;
@@ -60,6 +81,7 @@
 
             home-manager.extraSpecialArgs = {
               isLaptop = true;
+              inherit inputs;
             };
 
             home-manager.users.andreaszacchi = import ./home-manager/home-laptop.nix;
