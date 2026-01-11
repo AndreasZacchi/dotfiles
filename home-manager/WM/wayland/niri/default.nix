@@ -38,6 +38,11 @@
         mod-key-nested "Alt"
       }
 
+      cursor {
+        xcursor-theme "Adwaita"
+        xcursor-size 24
+      }
+
       output "HDMI-A-1" {
         scale 1.0
         transform "normal"

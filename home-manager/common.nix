@@ -7,7 +7,6 @@
 
 		# WM/DE
 		#./WM/wayland/sway
-		#./WM/wayland/dms
 		./WM/wayland/noctalia
 		./WM/wayland/niri
 
