@@ -9,14 +9,14 @@
       ./modules/sound.nix
       ./modules/bitwarden.nix
       ./modules/thunar.nix
-      #./modules/greetd.nix # Sway
+      ./modules/greetd.nix
 
       ./modules/opengl.nix
       ./modules/stylix.nix
       # Set Desktop Environment
       #./DE/wayland/sway.nix # Sway
       ./DE/wayland/niri.nix
-      ./modules/dms-greeter.nix
+      #./modules/dms-greeter.nix
 
       # Nix optimisations
       ./modules/nix-optimisation.nix
