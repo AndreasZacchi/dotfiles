@@ -11,6 +11,8 @@
       ./modules/thunar.nix
       ./modules/greetd.nix
 
+      ./modules/unity.nix
+
       ./modules/opengl.nix
       ./modules/stylix.nix
       # Set Desktop Environment
