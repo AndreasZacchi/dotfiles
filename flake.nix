@@ -65,6 +65,9 @@
       };
       laptop = nixpkgs.lib.nixosSystem { # My ASUS laptop
         system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./nixos/configuration.nix
           ./hosts/laptop/laptop-hardware.nix

@@ -12,6 +12,7 @@
       include "./dms/alttab.kdl"
       include "./dms/colors.kdl"
       include "./dms/wpblur.kdl"
+      include "./outputs.kdl"
 
       input {
         keyboard {
@@ -26,7 +27,7 @@
         touchpad {
           tap
           dwt
-          natural-scroll
+          //natural-scroll
           accel-speed 0.1
           accel-profile "adaptive"
           scroll-method "two-finger"
@@ -37,18 +38,6 @@
 
         mod-key "Super"
         mod-key-nested "Alt"
-      }
-
-      output "HDMI-A-1" {
-        scale 1.0
-        transform "normal"
-        position x=0 y=0
-      }
-
-      output "eDP-1" {
-        scale 1.4
-        transform "normal"
-        mode "1920x1080@79.982"
       }
 
       screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

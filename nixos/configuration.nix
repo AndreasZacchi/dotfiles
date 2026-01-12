@@ -10,7 +10,6 @@
       ./modules/bitwarden.nix
       ./modules/thunar.nix
       #./modules/greetd.nix # Sway
-      ./modules/xdg.nix
 
       ./modules/opengl.nix
       ./modules/stylix.nix
@@ -46,7 +45,7 @@
   users.users.andreaszacchi = {
     isNormalUser = true;
     description = "AndreasZacchi";
-    extraGroups = [ "networkmanager" "wheel" "greeter" ];
+    extraGroups = [ "networkmanager" "wheel" "greeter" "video" "input" ];
   };
 
   home-manager.backupFileExtension = "backup";

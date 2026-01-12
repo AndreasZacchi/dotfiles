@@ -5,6 +5,7 @@
    [
       ./common.nix
       #./WM/wayland/sway/desktop.nix
+      ./WM/wayland/niri/desktop.nix
    ];
 }
 
