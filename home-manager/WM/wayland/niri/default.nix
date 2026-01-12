@@ -6,12 +6,12 @@
 
   #        include "dms/layout.kdl"
   #        include "dms/binds.kdl"
+  # include "./dms/alttab.kdl"
+  #     include "./dms/colors.kdl"
+  #     include "./dms/wpblur.kdl"
 
   home.file.".config/niri/config.kdl" = {
     text = ''
-      include "./dms/alttab.kdl"
-      include "./dms/colors.kdl"
-      include "./dms/wpblur.kdl"
       include "./outputs.kdl"
 
       input {
@@ -38,6 +38,11 @@
 
         mod-key "Super"
         mod-key-nested "Alt"
+      }
+
+      cursor {
+        xcursor-theme "Adwaita"
+        xcursor-size 24
       }
 
       screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -69,24 +74,16 @@
         center-focused-column "never"
       }
 
-      cursor {
-        xcursor-theme "volantes_light_cursors"
-        xcursor-size 16
-      }
-
       hotkey-overlay { skip-at-startup; }
 
       binds {
-        Ctrl+Alt+A { spawn "dms" "ipc" "call" "dash" "toggle" "overview"; }
-        Ctrl+Alt+C { spawn "dms" "ipc" "call" "control-center" "toggle"; }
-        Ctrl+Alt+D { spawn "dms" "ipc" "call" "dash" "toggle" "media"; }
-        Ctrl+Alt+L { spawn "dms" "ipc" "call" "wallpaper" "next"; }
-        Ctrl+Alt+S { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-        Ctrl+Alt+W { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
-        Mod+M { spawn "dms" "ipc" "call" "processlist" "toggle"; }
-        Mod+N { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-        Mod+Space { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-        Mod+V { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+        Mod+Space { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+        Mod+P { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+
+        Mod+V { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
+
+        Mod+Escape { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"; }
+        Mod+Shift+Escape { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
 
         Mod+BracketLeft { consume-or-expel-window-left; }
         Mod+BracketRight { consume-or-expel-window-right; }
@@ -111,7 +108,6 @@
         Mod+Shift+Up { move-column-to-workspace-up; }
         Mod+Shift+L { move-column-right-or-to-monitor-right; }
         Mod+Shift+Right { move-column-right-or-to-monitor-right; }
-        Mod+Shift+R { switch-preset-column-width; }
 
         Mod+Ctrl+H     { focus-monitor-left; }
         Mod+Ctrl+Left  { focus-monitor-left; }
@@ -144,17 +140,20 @@
 
         Mod+Return { spawn "alacritty"; }
         Mod+B { spawn "firefox"; }
-        Mod+P { spawn "fuzzel"; }
 
         Mod+Tab { toggle-overview; }
         Mod+Shift+S { screenshot; }
+        Mod+Shift+R { spawn "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"; }
 
-        XF86AudioLowerVolume { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-; dms ipc call audio increment 0"; }
-        XF86AudioMute { spawn "dms" "ipc" "call" "audio" "mute"; }
-        XF86AudioPlay { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-        XF86AudioRaiseVolume { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; dms ipc call audio increment 0"; }
-        XF86MonBrightnessDown { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
-        XF86MonBrightnessUp { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+
+        XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+        XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+        XF86AudioPlay { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+        XF86AudioNext { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
+        XF86AudioPrev { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
+        XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+        XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+        XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
       }
 
       animations {
@@ -210,6 +209,24 @@
         place-within-backdrop true
       }
 
+      window-rule {
+      // Rounded corners for a modern look.
+      geometry-corner-radius 20
+
+      // Clips window contents to the rounded corner boundaries.
+      clip-to-geometry true
+    }
+    // Set the overview wallpaper on the backdrop.
+      layer-rule {
+        match namespace="^noctalia-overview*"
+        place-within-backdrop true
+      }
+
+    debug {
+      // Allows notification actions and window activation from Noctalia.
+      honor-xdg-activation-with-invalid-serial
+    }
+
       recent-windows {
         debounce-ms 750
         open-delay-ms 0
@@ -222,6 +239,8 @@
           Ctrl+Alt+Q { previous-window; }
         }
       }
+      spawn-at-startup "noctalia-shell"
+
     '';
   };
 }

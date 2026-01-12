@@ -1,4 +1,9 @@
-{
+{ pkgs, ... }:{
+    home.packages = [
+        pkgs.adwaita-cursor-theme
+    ];
+
+
     stylix = {
         enable = true;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
