@@ -1,5 +1,6 @@
 {config, pkgs, ...}:
 {
+  services.gvfs.enable = true;
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [
@@ -7,6 +8,7 @@
     ];
   };
   programs.xfconf.enable = true; # To save thunar preferences
+  programs.dconf.enable = true;  # To save thumbnail settings
  # programs.file-roller.enable = true;
 
   # Add thumbnail support
