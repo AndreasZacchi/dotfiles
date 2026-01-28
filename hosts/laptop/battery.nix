@@ -3,6 +3,13 @@
     services = {
         thermald.enable = true; # prevent overheating on intel by thottling
         upower.enable = true; # battery stats
-        power-profiles-daemon.enable = true; # power profiles
+        # power-profiles-daemon.enable = true; # power profiles
+        tlp = {
+            enable = true;
+            settings = {
+                PCIE_ASPM_ON_BAT = "powersupersave";
+            };
+            pd.enable = true; # Power profiles Daemon integration
+        };
     };
 }
