@@ -9,7 +9,8 @@
       ./modules/sound.nix
       ./modules/bitwarden.nix
       ./modules/thunar.nix
-      ./modules/greetd.nix
+      #./modules/greetd.nix
+      ./modules/gdm.nix
 
       ./modules/unity.nix
 

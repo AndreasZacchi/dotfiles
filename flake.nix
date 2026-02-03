@@ -63,6 +63,7 @@
           ./nixos/configuration.nix
           ./hosts/laptop/laptop-hardware.nix
           nixos-hardware.nixosModules.asus-zenbook-ux481-intelgpu
+          #nixos-hardware.nixosModules.asus-zenbook-ux481-nvidia
 
           ./hosts/laptop/battery.nix
 

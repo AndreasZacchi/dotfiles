@@ -3,7 +3,7 @@
     services = {
         thermald.enable = true; # prevent overheating on intel by thottling
         upower.enable = true; # battery stats
-        # power-profiles-daemon.enable = true; # power profiles
+        power-profiles-daemon.enable = false; # power profiles not used when tlp-pd is enabled
         tlp = {
             enable = true;
             settings = {
