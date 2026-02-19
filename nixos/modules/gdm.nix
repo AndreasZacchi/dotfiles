@@ -1,13 +1,16 @@
 { pkgs, ... }:
 {
-    services.xserver = {
+    services.xserver = { # Maybe not needed?
         enable = true;
+    };
 
-        displayManager.gdm = {
-            enable = true;
-            wayland = true;
+    services = {
+        displayManager = {
+            gdm = {
+                enable = true;
+                wayland = true;
+            };
         };
-
         desktopManager.gnome.enable = true;
     };
 
