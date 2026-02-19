@@ -36,7 +36,7 @@
           ./hosts/home/network.nix
           ./hosts/home/gpu.nix
           ./hosts/home/cpu.nix
-          ./modules/ollama.nix
+          ./nixos/modules/ollama.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
