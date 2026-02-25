@@ -14,12 +14,15 @@
         desktopManager.gnome.enable = true;
     };
 
-    xdg.portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-            xdg-desktop-portal-gnome
-        ];
-    };
-
-
+    services.gnome.games.enable = false;
+    environment.gnome.excludePackages = with pkgs; [ 
+        gnome-tour 
+        gnome-user-docs 
+        gnome-contacts 
+        gnome-maps
+        gnome-weather
+        gnome-music
+        gnome-console
+        nautilus
+    ];
 }
