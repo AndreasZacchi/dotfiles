@@ -29,6 +29,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
+          isLaptop = false;
         };
         modules = [
           ./nixos/configuration.nix
@@ -59,6 +60,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
+          isLaptop = true;
         };
         modules = [
           ./nixos/configuration.nix
