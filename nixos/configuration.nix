@@ -12,7 +12,7 @@
       #./modules/greetd.nix
       ./modules/gdm.nix
 
-      ./modules/unity.nix
+      #./modules/unity.nix
 
       ./modules/opengl.nix
       ./modules/stylix.nix
