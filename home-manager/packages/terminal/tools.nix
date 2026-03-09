@@ -1,7 +1,7 @@
 {pkgs, ...}:
 {
     home.packages = with pkgs; [
-		neofetch
+		fastfetch
 		nnn # terminal file manager
         powertop # power management
         htop # system monitor
