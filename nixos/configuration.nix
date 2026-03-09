@@ -16,6 +16,7 @@
 
       ./modules/opengl.nix
       ./modules/stylix.nix
+      ./modules/devenv.nix
       # Set Desktop Environment
       #./DE/wayland/sway.nix # Sway
       ./DE/wayland/niri.nix

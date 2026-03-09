@@ -12,10 +12,9 @@
 
 		# Dev environment
 		./packages/devenv/git.nix
-		./packages/devenv/direnv.nix
+		#./packages/devenv/direnv.nix
 		./packages/devenv/vscode.nix
 		./packages/devenv/gpg.nix
-		./packages/devenv/devenv.nix
 
 		./packages/devenv/languages/python3.nix
 		./packages/devenv/languages/dotnet.nix
