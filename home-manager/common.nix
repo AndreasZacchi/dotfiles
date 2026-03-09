@@ -21,7 +21,7 @@
 		./packages/devenv/languages/java.nix
 		
 
-		./packages/devenv/postgresql.nix
+		#./packages/devenv/postgresql.nix
 		
 		# TexLive
 		#./packages/tex.nix

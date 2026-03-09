@@ -56,6 +56,9 @@
         appLauncher = {
           terminalCommand = "alacritty";
         };
+        brightness = {
+          device = "intel_backlight";
+        };
         controlCenter = {
           position = "close_to_bar_button";
           shortcuts = {
