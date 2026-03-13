@@ -19,6 +19,7 @@
     libheif
     libheif.out
     tumbler
+    file-roller
   ];
 
 }
