@@ -68,7 +68,7 @@ in {
 
                 # Start gnome-keyring inside the sway session
                 {
-                    command = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,ssh,pkcs11";
+                    command = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,pkcs11";
                     always = true;
                 }
             ];

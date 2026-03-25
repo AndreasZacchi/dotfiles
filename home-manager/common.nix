@@ -45,6 +45,9 @@
 	home.username = "andreaszacchi";
 	home.homeDirectory = "/home/andreaszacchi";
 	home.keyboard.layout = "dk";
+	home.sessionVariables = {
+		SSH_AUTH_SOCK = "${config.home.homeDirectory}/.bitwarden-ssh-agent.sock";
+	};
 
 	# This value determines the home Manager release that your
 	# configuration is compatible with. This helps avoid breakage

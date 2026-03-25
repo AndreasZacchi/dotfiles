@@ -4,6 +4,7 @@
     enableCompletion = true;
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
     '';
 
     shellAliases = {
