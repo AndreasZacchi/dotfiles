@@ -21,5 +21,6 @@
     ];
     boot.blacklistedKernelModules = [ "asus_nb_wmi" ];
     # Aggresive disable (might break fn keys etc.)
-    #boot.blacklistedKernelModules = [ "asus_wmi" ]; 
+    #boot.blacklistedKernelModules = [ "asus_wmi" ];
+    systemd.services.battery-charge-threshold.enable = false; 
 }
