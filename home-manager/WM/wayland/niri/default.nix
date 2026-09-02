@@ -77,13 +77,10 @@
       hotkey-overlay { skip-at-startup; }
 
       binds {
-        Mod+Space { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-        Mod+P { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+        Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+        Mod+P { spawn-sh "noctalia msg panel-toggle launcher"; }
 
-        Mod+V { spawn "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
-
-        Mod+Escape { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"; }
-        Mod+Shift+Escape { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+        Mod+Escape { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
 
         Mod+BracketLeft { consume-or-expel-window-left; }
         Mod+BracketRight { consume-or-expel-window-right; }
@@ -143,17 +140,16 @@
 
         Mod+Tab { toggle-overview; }
         Mod+Shift+S { screenshot; }
-        Mod+Shift+R { spawn "noctalia-shell" "ipc" "call" "screenRecorder" "toggle"; }
 
 
-        XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-        XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-        XF86AudioPlay { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
-        XF86AudioNext { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
-        XF86AudioPrev { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
-        XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-        XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
-        XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+        XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+        XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+        XF86AudioPlay { spawn-sh "noctalia msg media-play-pause"; }
+        XF86AudioNext { spawn-sh "noctalia msg media-next"; }
+        XF86AudioPrev { spawn-sh "noctalia msg media-previous"; }
+        XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+        XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
+        XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
       }
 
       animations {
@@ -209,6 +205,14 @@
         place-within-backdrop true
       }
 
+      // Floating Noctalia settings window.
+      window-rule {
+        match app-id="dev.noctalia.Noctalia"
+        open-floating true
+        default-column-width { fixed 1080; }
+        default-window-height { fixed 920; }
+      }
+
       window-rule {
       // Rounded corners for a modern look.
       geometry-corner-radius 20
@@ -239,7 +243,7 @@
           Ctrl+Alt+Q { previous-window; }
         }
       }
-      spawn-at-startup "noctalia-shell"
+      spawn-at-startup "noctalia"
 
     '';
   };

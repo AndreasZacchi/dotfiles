@@ -21,6 +21,7 @@
 
 
     environment.variables.NIXOS_OZONE_WL = "1";
+    xdg.portal.config.niri."org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
     environment.systemPackages = with pkgs; [
       wayland-utils
       libsecret

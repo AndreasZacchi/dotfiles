@@ -20,6 +20,7 @@
       # Set Desktop Environment
       #./DE/wayland/sway.nix # Sway
       ./DE/wayland/niri.nix
+      ./DE/wayland/noctalia.nix
 
       # Nix optimisations
       ./modules/nix-optimisation.nix

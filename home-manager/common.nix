@@ -7,8 +7,8 @@
 
 		# WM/DE
 		#./WM/wayland/sway
-		./WM/wayland/noctalia
 		./WM/wayland/niri
+		./WM/wayland/noctalia
 
 		# Dev environment
 		./packages/devenv/git.nix
@@ -58,6 +58,8 @@
 	# the home Manager release notes for a list of state version
 	# changes in each release.
 	home.stateVersion = "23.05";
+
+	#gtk.gtk4.theme = config.gtk.theme;
 
 	# Let home Manager install and manage itself.
 	programs.home-manager.enable = true;

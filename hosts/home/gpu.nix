@@ -22,7 +22,6 @@
         __GL_SYNC_TO_VBLANK = "1";
         __GLX_VENDOR_LIBRARY_NAME = "nvidia";
         WLR_NO_HARDWARE_CURSORS = "1";
-        GDK_BACKEND = "wayland";
         QT_QPA_PLATFORM = "wayland";
         MOZ_ENABLE_WAYLAND = "1";
     };
