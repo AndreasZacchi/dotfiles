@@ -17,9 +17,13 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/cachix";
+      #inputs.nixpkgs.follows = "nixpkgs"; Using this makes cache miss
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, niri, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, stylix, niri, noctalia, ... }: {
     nixosConfigurations = {
       home = nixpkgs.lib.nixosSystem { # My home desktop
         system = "x86_64-linux";
@@ -33,6 +37,7 @@
           ./hosts/home/network.nix
           ./hosts/home/gpu.nix
           ./hosts/home/cpu.nix
+          ./nixos/modules/ollama.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

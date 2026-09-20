@@ -8,7 +8,6 @@
 		# WM/DE
 		#./WM/wayland/sway
 		./WM/wayland/niri
-		./WM/wayland/noctalia
 
 		# Dev environment
 		./packages/devenv/git.nix
@@ -58,6 +57,17 @@
 	# the home Manager release notes for a list of state version
 	# changes in each release.
 	home.stateVersion = "23.05";
+
+	# Keep the current Firefox profile location explicit while retaining the
+	# existing Home Manager state version.
+	programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
+
+	# Rofi is not configured in this setup. Disabling its Stylix
+	# target also avoids evaluating its deprecated programs.rofi.font setting.
+	stylix.targets = {
+		qt.platform = "qtct";
+		rofi.enable = false;
+	};
 
 	#gtk.gtk4.theme = config.gtk.theme;
 
