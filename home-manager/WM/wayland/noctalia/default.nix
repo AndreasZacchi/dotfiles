@@ -10,8 +10,6 @@
         settings = {
             theme = {
                 mode = "dark";
-                source = "builtin";
-                builtin = "Rosé Pine";
             };
             dock = {
                 enabled = true;

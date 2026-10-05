@@ -8,6 +8,7 @@
 		# WM/DE
 		#./WM/wayland/sway
 		./WM/wayland/niri
+		./WM/wayland/noctalia
 
 		# Dev environment
 		./packages/devenv/git.nix
@@ -67,6 +68,7 @@
 	stylix.targets = {
 		qt.platform = "qtct";
 		rofi.enable = false;
+		noctalia.enable = false;
 	};
 
 	#gtk.gtk4.theme = config.gtk.theme;
